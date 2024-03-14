@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 12a75aaa27e58ac458bb4539134042bc
+guid: 0b19d93bc95a6db4f8e33368bfb5197c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -123,55 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Enemy20 1
+      name: Enemy2 0
       rect:
         serializedVersion: 2
-        x: 20
-        y: 444
-        width: 257
-        height: 205
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4a5e10d98832ce34ea3ce3483263a31f
-      internalID: 1105933753
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enemy20 2
-      rect:
-        serializedVersion: 2
-        x: 289
-        y: 450
-        width: 249
-        height: 193
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 81e2bb3378b90814eb1fb08c09ec094f
-      internalID: -1078349511
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enemy30 1
-      rect:
-        serializedVersion: 2
-        x: 553
+        x: 19
         y: 454
-        width: 184
-        height: 183
+        width: 256
+        height: 184
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a1a637a9d3be9a4bb24e667465848b0
-      internalID: -1420226934
+      spriteID: ac69bb2e8e6a72249a8ace235ca3a099
+      internalID: -590661686
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy30 2
+      name: Enemy2 1
       rect:
         serializedVersion: 2
-        x: 754
-        y: 458
-        width: 180
-        height: 177
+        x: 278
+        y: 455
+        width: 262
+        height: 186
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,40 +158,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77fa3eb6964cd3940a3ca2aeb743defa
-      internalID: -1097947031
+      spriteID: 4e263f48f064a2843a11d0dd08592572
+      internalID: -169964724
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy10
+      name: Enemy3 0
       rect:
         serializedVersion: 2
-        x: 955
-        y: 456
-        width: 265
-        height: 181
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 25d2ea6dbb0d04a4cba85ce592f4e2d4
-      internalID: 444321604
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enemy10 1
-      rect:
-        serializedVersion: 2
-        x: 1235
+        x: 548
         y: 457
-        width: 272
+        width: 189
         height: 178
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -242,8 +179,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8bd90c6f20c81cb4cbffa7c55e75bc2c
-      internalID: 49764019
+      spriteID: d84d67324a3310646871386edaa15e0e
+      internalID: -1411527730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy3 1
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 458
+        width: 192
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad9c5dbf9ceebec47bcbebb2829c50d5
+      internalID: -2047767776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy1 1
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 451
+        width: 284
+        height: 188
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09b03a585309da04592501c4fd99b9fd
+      internalID: 2135357819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy1 0
+      rect:
+        serializedVersion: 2
+        x: 1229
+        y: 456
+        width: 279
+        height: 179
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e01fdf6d79c8c6408222a298eb7281c
+      internalID: -2072869000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spaceship
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 52
+        width: 275
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae5017b25225d084a954a21246175eef
+      internalID: -1057252119
       vertices: []
       indices: 
       edges: []
@@ -253,9 +274,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 778
-        y: 53
-        width: 168
-        height: 122
+        y: 46
+        width: 170
+        height: 131
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,20 +284,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2399394c94ff24e46a6221c532de29b4
-      internalID: -1878039186
+      spriteID: 57beed24c513dce439894536a404f361
+      internalID: 790413784
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gun Death
+      name: death
       rect:
         serializedVersion: 2
-        x: 958
-        y: 46
-        width: 232
-        height: 137
+        x: 1283
+        y: 52
+        width: 214
+        height: 141
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -284,8 +305,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76d0dd34daf63a24ba278f7eb0daec06
-      internalID: 1557436090
+      spriteID: 2ef38e663b4b5dd42a2b1432d01e0bfb
+      internalID: 1002775718
       vertices: []
       indices: 
       edges: []
@@ -295,9 +316,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1201
-        y: 62
-        width: 76
-        height: 127
+        y: 64
+        width: 75
+        height: 124
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -305,20 +326,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fde4921e97fec3843a962971776179f8
-      internalID: -142220806
+      spriteID: e3bc009df2bc2c14093b77255f386b6d
+      internalID: -2022767276
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy Death
+      name: invader-sprites_1
       rect:
         serializedVersion: 2
-        x: 1284
-        y: 50
-        width: 216
-        height: 145
+        x: 953
+        y: 43
+        width: 243
+        height: 146
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -326,50 +347,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 257d970b56d4253488945a2ee9b77c83
-      internalID: 250373777
+      spriteID: 68a712ee16c62d1479805f3ba274fc88
+      internalID: -989655730
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Broken Barricade
+      name: Destroyed Barricade
       rect:
         serializedVersion: 2
-        x: 1720
+        x: 1713
         y: 32
-        width: 264
-        height: 177
+        width: 271
+        height: 184
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 032a11d30af9e3249a4c59ee6a0acfca
-      internalID: 725866947
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EnemyMystery
-      rect:
-        serializedVersion: 2
-        x: 508
-        y: 53
-        width: 265
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 940e6286ff0032b4581127b05530b842
-      internalID: 894127310
+      spriteID: fcd6ee6143d4e5f45b2fc4ae1e322b7f
+      internalID: 332742663
       vertices: []
       indices: 
       edges: []
@@ -385,18 +385,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Broken Barricade: 725866947
-      Enemy Bullet: -142220806
-      Enemy Death: 250373777
-      Enemy10: 444321604
-      Enemy10 1: 49764019
-      Enemy20 1: 1105933753
-      Enemy20 2: -1078349511
-      Enemy30 1: -1420226934
-      Enemy30 2: -1097947031
-      EnemyMystery: 894127310
-      Gun: -1878039186
-      Gun Death: 1557436090
+      Destroyed Barricade: 332742663
+      Enemy Bullet: -2022767276
+      Enemy1 0: -2072869000
+      Enemy1 1: 2135357819
+      Enemy2 0: -590661686
+      Enemy2 1: -169964724
+      Enemy3 0: -1411527730
+      Enemy3 1: -2047767776
+      Gun: 790413784
+      Spaceship: -1057252119
+      death: 1002775718
+      invader-sprites_1: -989655730
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -7,7 +7,7 @@ using UnityEngine;
 public class Barricade : MonoBehaviour
 {
     private int hits = 0;
-    private void OnCollisionEnter(Collision other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
         hits++;
         if (hits == 1)

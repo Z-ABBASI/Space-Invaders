@@ -2,44 +2,55 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class Enemy : MonoBehaviour
 {
-    public GameObject bullet;
-    public Transform shottingOffset;
+    // Death
+    public AudioSource death;
+    public GameObject explosion;
     public int points;
     public delegate void EnemyDied(int points);
     public static event EnemyDied OnEnemyDied;
-    private Vector3 direction;
-    private int numberOfEnemies;
-    public float speed;
+    
+    // Shoot
+    public GameObject enemy3;
+    public GameObject bullet;
+    public float minShootInterval;
+    public float maxShootInterval;
+    public float shootTimer;
+    public Transform shottingOffset;
+    public AudioSource shoot;
 
     private void Start()
     {
-        direction = Vector3.left;
-        numberOfEnemies = 55;
+        shootTimer = Random.Range(minShootInterval, maxShootInterval);
     }
 
     private void Update()
     {
-        // Move Enemies horizontally
-        transform.position += direction * Time.deltaTime * speed / numberOfEnemies;
-        if (name == "Enemy30(Clone")
+        shootTimer -= Time.deltaTime;
+        if (shootTimer <= 0f)
         {
-            bool [] shoot =
-            {
-                false, false, false, false, false, false, false, false, true, false, false, false, false, false, false,
-                false, false, false, false, false, false, false, false, true, false, false, false, false, false, false
-            };
-            if (shoot[Random.Range(0, 31)] == true)
-            {
-                GameObject shot = Instantiate(bullet, shottingOffset.position, Quaternion.identity);
-                Debug.Log("Bang!");
-    
-                Destroy(shot, 3f);
-            }
+            Shoot();
+            ResetShootTimer();
         }
+    }
+
+    private void Shoot()
+    {
+        if (gameObject == enemy3)
+        {
+            GameObject shot = Instantiate(bullet, shottingOffset.position, Quaternion.identity);
+            shoot.Play();
+            Physics.Raycast(transform.position, Vector3.down, 7);
+        }
+    }
+
+    private void ResetShootTimer()
+    {
+        shootTimer = Random.Range(minShootInterval, maxShootInterval);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -49,30 +60,17 @@ public class Enemy : MonoBehaviour
             Debug.Log("Ouch!");
             Destroy(collision.gameObject);
             
-            GetComponent<Animator>().SetTrigger("Dead");
-            numberOfEnemies--;
+            Instantiate(explosion, this.gameObject.transform);
+            death.Play();
+            Debug.Log("Dead");
+            StartCoroutine(delay());
+            OnEnemyDied.Invoke(points);
         }
-        else
-        {
-            transform.position += Vector3.down;
-        }
-
-        if (collision.gameObject.name == "LeftBarrier")
-        {
-            direction = Vector3.right;
-        }
-
-        if (collision.gameObject.name == "LeftBarrier")
-        {
-            direction = Vector3.left;
-        }
-        
     }
 
-    void Die()
+    IEnumerator delay()
     {
-        Debug.Log("Dead");
-        OnEnemyDied.Invoke(points);
+        yield return new WaitForSeconds(1);
         Destroy(gameObject);
     }
 }

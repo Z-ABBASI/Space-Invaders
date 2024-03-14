@@ -11,6 +11,9 @@ public class Player : MonoBehaviour
   public delegate void PlayerDied();
   public static event PlayerDied OnPlayerDied;
   private Rigidbody2D rb;
+  public AudioSource shoot;
+  public GameObject explosion;
+  public AudioSource death;
 
   private void Start()
   {
@@ -24,6 +27,8 @@ public class Player : MonoBehaviour
       {
         GameObject shot = Instantiate(bullet, shottingOffset.position, Quaternion.identity);
         Debug.Log("Bang!");
+        shoot.Play();
+        GetComponent<Animator>().SetTrigger("Shoot");
 
         Destroy(shot, 3f);
       }
@@ -31,27 +36,24 @@ public class Player : MonoBehaviour
       // Move Player horizontally
       rb.position += Vector2.right * Input.GetAxis("Horizontal") * Time.deltaTime * 4;
     }
-    
-    void OnCollisionEnter2D(Collision2D collision)
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
-      if (collision.gameObject.name == "EnemyBullet(Clone)")
+      if (other.gameObject.name == "EnemyBullet(Clone)")
       {
         Debug.Log("Ouch!");
-        Destroy(collision.gameObject);
-            
-        GetComponent<Animator>().SetTrigger("Dead");
-        Die();
-      }
-      else
-      {
-        Debug.Log("Barrier");
+        Destroy(other.gameObject);
+        
+        Instantiate(explosion, this.gameObject.transform);
+        death.Play();
+        Debug.Log("Dead");
+        StartCoroutine(delay());
       }
     }
 
-    void Die()
+    IEnumerator delay()
     {
-      Debug.Log("Dead");
+      yield return new WaitForSeconds(1);
       OnPlayerDied.Invoke();
-      Destroy(gameObject);
     }
 }

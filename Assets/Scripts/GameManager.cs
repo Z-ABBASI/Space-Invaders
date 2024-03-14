@@ -2,48 +2,42 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    // Score Text
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI highScoreText;
+    
+    // Score
     private int score;
     private int highScore;
-    public GameObject enemy10;
-    public GameObject enemy20;
-    public GameObject enemy30;
-    public GameObject enemyMystery;
+    
+    // Delegate And Event
+    public delegate void Victory();
+    public static event Victory OnVictory;
+    
+    // Number Of Enemies
+    public int numberOfEnemies;
     
     // Start is called before the first frame update
     void Start()
     {
+        // direction = Vector3.left;
         score = 0;
         highScore = PlayerPrefs.GetInt("HighScore", 0);
-        
-        // Instantiate Enemies
-        for (float x = 0f; x < 11f; x++)
-        {
-            Instantiate(enemy10, new Vector3(x, 0, 0), Quaternion.identity);
-            Instantiate(enemy10, new Vector3(x, 1, 0), Quaternion.identity);
-            Instantiate(enemy20, new Vector3(x, 2, 0), Quaternion.identity);
-            Instantiate(enemy20, new Vector3(x, 3, 0), Quaternion.identity);
-            Instantiate(enemy30, new Vector3(x, 4, 0), Quaternion.identity);
-            if (x != 0)
-            {
-                Instantiate(enemy10, new Vector3(-x, 0, 0), Quaternion.identity);
-                Instantiate(enemy10, new Vector3(-x, 1, 0), Quaternion.identity);
-                Instantiate(enemy20, new Vector3(-x, 2, 0), Quaternion.identity);
-                Instantiate(enemy20, new Vector3(-x, 3, 0), Quaternion.identity);
-                Instantiate(enemy30, new Vector3(-x, 4, 0), Quaternion.identity);
-            }
-            
-        }
         
         // Death of Enemies
         Enemy.OnEnemyDied += EnemyOnOnEnemyDies;
         void EnemyOnOnEnemyDies(int points)
         {
             score += points;
+            numberOfEnemies--;
+            if (numberOfEnemies <= 0)
+            {
+                OnVictory.Invoke();
+            }
         }
         
         // Death of Player

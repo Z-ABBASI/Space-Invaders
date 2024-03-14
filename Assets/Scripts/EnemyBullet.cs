@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,8 +7,10 @@ using UnityEngine;
 public class EnemyBullet : MonoBehaviour
 {
   private Rigidbody2D myRigidbody2D;
+  public GameObject player;
+  public GameObject barricade;
 
-  public float speed = -5;
+  public float speed = 5;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,5 +23,21 @@ public class EnemyBullet : MonoBehaviour
     {
       myRigidbody2D.velocity = Vector2.down * speed; 
       Debug.Log("Wwweeeeee");
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+      if (other.gameObject != player && other.gameObject != barricade)
+      {
+        myRigidbody2D.velocity = Vector2.down * speed;
+      }
+    }
+
+    private void OnCollisionStay2D(Collision2D other)
+    {
+      if (other.gameObject != player && other.gameObject != barricade)
+      {
+        myRigidbody2D.velocity = Vector2.down * speed;
+      }
     }
 }
